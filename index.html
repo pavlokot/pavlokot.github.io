@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Павло Кот — Head of Digital</title>
+<meta name="description" content="Особистий сайт Павла Кота — Head of Digital: digital-стратегія, AI-продакшн, дані, моушн-дизайн. Ролики, відео-відгуки, досвід і посилання." />
+
+<style>
+  /* ============ TOKENS ============ */
+  /* dark is the committed default; light + explicit toggles override below */
+  :root {
+    --bg:        #0B0B12;
+    --bg-2:      #0F0F1A;
+    --surface:   rgba(255,255,255,.045);
+    --surface-2: rgba(255,255,255,.07);
+    --solid:     #14141F;
+    --border:    rgba(255,255,255,.10);
+    --border-2:  rgba(255,255,255,.20);
+    --text:      #F5F2EF;
+    --dim:       #ABA7B5;
+    --mute:      #6E6B7B;
+    --accent:    #FF3D86;
+    --cyan:      #24E3D6;
+    --grad:      linear-gradient(112deg,#FF2E7E 0%,#FF7A3C 54%,#FFC94C 100%);
+    --grad-soft: linear-gradient(112deg,rgba(255,46,126,.16),rgba(255,122,60,.12) 55%,rgba(255,201,76,.10));
+    --shadow:    0 26px 70px -28px rgba(0,0,0,.72);
+    --hatch:     rgba(255,255,255,.12);
+    --r:  16px;
+    --r-sm: 10px;
+    --grain-op: .05;
+    --grain-blend: overlay;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg:        #F7F4EF;
+      --bg-2:      #F0EBE3;
+      --surface:   #FFFFFF;
+      --surface-2: #FFFFFF;
+      --solid:     #FFFFFF;
+      --border:    rgba(24,18,32,.10);
+      --border-2:  rgba(24,18,32,.18);
+      --text:      #17131F;
+      --dim:       #57525F;
+      --mute:      #8B8693;
+      --accent:    #DC1A6E;
+      --cyan:      #0E9E96;
+      --grad-soft: linear-gradient(112deg,rgba(255,46,126,.16),rgba(255,122,60,.13) 55%,rgba(255,201,76,.18));
+      --shadow:    0 24px 54px -26px rgba(24,18,32,.28);
+      --hatch:     rgba(24,18,32,.10);
+      --grain-op:  .4;
+      --grain-blend: multiply;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg:#F7F4EF; --bg-2:#F0EBE3; --surface:#FFFFFF; --surface-2:#FFFFFF; --solid:#FFFFFF;
+    --border:rgba(24,18,32,.10); --border-2:rgba(24,18,32,.18);
+    --text:#17131F; --dim:#57525F; --mute:#8B8693;
+    --accent:#DC1A6E; --cyan:#0E9E96;
+    --grad-soft:linear-gradient(112deg,rgba(255,46,126,.16),rgba(255,122,60,.13) 55%,rgba(255,201,76,.18));
+    --shadow:0 24px 54px -26px rgba(24,18,32,.28);
+    --hatch:rgba(24,18,32,.10);
+    --grain-op:.4; --grain-blend:multiply;
+  }
+  :root[data-theme="dark"] {
+    --bg:#0B0B12; --bg-2:#0F0F1A; --surface:rgba(255,255,255,.045); --surface-2:rgba(255,255,255,.07); --solid:#14141F;
+    --border:rgba(255,255,255,.10); --border-2:rgba(255,255,255,.20);
+    --text:#F5F2EF; --dim:#ABA7B5; --mute:#6E6B7B;
+    --accent:#FF3D86; --cyan:#24E3D6;
+    --grad-soft:linear-gradient(112deg,rgba(255,46,126,.16),rgba(255,122,60,.12) 55%,rgba(255,201,76,.10));
+    --shadow:0 26px 70px -28px rgba(0,0,0,.72);
+    --hatch:rgba(255,255,255,.12);
+    --grain-op:.05; --grain-blend:overlay;
+  }
+
+  /* ============ BASE ============ */
+  *,*::before,*::after { box-sizing:border-box; }
+  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body {
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Manrope","Segoe UI",system-ui,-apple-system,sans-serif;
+    font-size:1.02rem;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before {
+    content:"";
+    position:fixed; inset:-20vmax;
+    z-index:0; pointer-events:none;
+    background:
+      radial-gradient(38vmax 38vmax at 12% 8%, rgba(255,46,126,.20), transparent 60%),
+      radial-gradient(34vmax 34vmax at 88% 22%, rgba(255,122,60,.16), transparent 62%),
+      radial-gradient(40vmax 40vmax at 70% 96%, rgba(36,227,214,.14), transparent 64%);
+    animation:drift 26s ease-in-out infinite alternate;
+  }
+  body::after {
+    content:"";
+    position:fixed; inset:0;
+    z-index:0; pointer-events:none;
+    opacity:var(--grain-op);
+    mix-blend-mode:var(--grain-blend);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  @keyframes drift {
+    from { transform:translate3d(-2%,-1%,0) scale(1); }
+    to   { transform:translate3d(3%,2%,0) scale(1.08); }
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    body::before{animation:none;}
+  }
+
+  main, .nav, .foot { position:relative; z-index:1; }
+  .wrap { max-width:1180px; margin-inline:auto; padding-inline:clamp(1.15rem,5vw,2.5rem); }
+
+  a { color:inherit; }
+  img { max-width:100%; display:block; }
+
+  ::selection { background:var(--accent); color:#fff; }
+  :focus-visible { outline:2px solid var(--cyan); outline-offset:3px; border-radius:4px; }
+
+  .skip {
+    position:absolute; left:-999px; top:0; z-index:99;
+    background:var(--solid); color:var(--text); padding:.7rem 1rem; border-radius:0 0 var(--r-sm) 0;
+  }
+  .skip:focus { left:0; }
+
+  /* ============ TYPE ROLES ============ */
+  h1,h2,h3 { font-family:"Unbounded","Manrope",system-ui,sans-serif; margin:0; text-wrap:balance; }
+  h1 { font-weight:900; font-size:clamp(2.7rem,8.4vw,6.2rem); line-height:.98; letter-spacing:-.025em; }
+  h2 { font-weight:700; font-size:clamp(1.85rem,4.6vw,3rem); line-height:1.05; letter-spacing:-.02em; }
+  h3 { font-family:"Manrope",sans-serif; font-weight:800; font-size:1.12rem; letter-spacing:-.01em; }
+  p { margin:0; }
+  .grad {
+    background:var(--grad);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .eyebrow {
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem; font-weight:500;
+    letter-spacing:.22em; text-transform:uppercase;
+    color:var(--cyan);
+    display:inline-flex; align-items:center; gap:.6rem;
+  }
+  .eyebrow::before { content:""; width:1.7rem; height:1px; background:currentColor; opacity:.7; }
+  .lead { max-width:60ch; color:var(--dim); font-size:clamp(1.02rem,1.6vw,1.18rem); }
+
+  /* ============ NAV ============ */
+  .nav {
+    position:sticky; top:0; z-index:20;
+    display:flex; align-items:center; gap:1.2rem;
+    padding:.7rem clamp(1.15rem,5vw,2.5rem);
+    background:color-mix(in oklab, var(--bg) 78%, transparent);
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+  }
+  .mark {
+    font-family:"Unbounded",sans-serif; font-weight:900; font-size:1.05rem;
+    letter-spacing:.02em; text-decoration:none;
+    padding:.28rem .5rem; border:1px solid var(--border-2); border-radius:8px;
+    background:var(--grad-soft);
+  }
+  .nav__links { display:flex; gap:1.4rem; margin-left:.4rem; flex:1; flex-wrap:wrap; }
+  .nav__links a {
+    font-size:.9rem; color:var(--dim); text-decoration:none;
+    font-family:"IBM Plex Mono",monospace; letter-spacing:.02em;
+  }
+  .nav__links a:hover { color:var(--text); }
+  .nav__ctl { display:flex; align-items:center; gap:.6rem; margin-left:auto; }
+  .seg {
+    display:inline-flex; border:1px solid var(--border-2); border-radius:999px; overflow:hidden;
+    font-family:"IBM Plex Mono",monospace;
+  }
+  .seg button {
+    appearance:none; border:0; background:transparent; color:var(--dim);
+    font:inherit; font-size:.8rem; padding:.34rem .66rem; cursor:pointer; letter-spacing:.06em;
+  }
+  .seg button.is-on { background:var(--grad); color:#12060B; font-weight:600; }
+  .icn {
+    appearance:none; width:2rem; height:2rem; border-radius:999px;
+    border:1px solid var(--border-2); background:var(--surface); color:var(--text);
+    cursor:pointer; font-size:1rem; line-height:1; display:grid; place-items:center;
+  }
+  .icn:hover { background:var(--surface-2); }
+  @media (max-width:760px){ .nav__links{ display:none; } }
+
+  /* ============ SECTION SHELL ============ */
+  .band { padding-block:clamp(4.5rem,10vw,8rem); }
+  .band__head { display:flex; flex-direction:column; gap:1rem; margin-bottom:clamp(2.2rem,5vw,3.4rem); }
+
+  /* ============ HERO ============ */
+  .hero { padding-block:clamp(4.5rem,12vw,9rem) clamp(3.5rem,8vw,6rem); }
+  .hero__kick {
+    font-family:"IBM Plex Mono",monospace; font-size:.85rem; letter-spacing:.1em;
+    color:var(--mute); margin-bottom:1.4rem;
+  }
+  .hero h1 { margin-bottom:1.6rem; }
+  .hero .lead { font-size:clamp(1.05rem,1.9vw,1.32rem); color:var(--dim); max-width:56ch; }
+  .cta { display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2.2rem; }
+  .btn {
+    --bh:1px;
+    display:inline-flex; align-items:center; gap:.55rem;
+    font-family:"Manrope",sans-serif; font-weight:700; font-size:.98rem;
+    padding:.9rem 1.4rem; border-radius:999px; text-decoration:none; cursor:pointer;
+    border:1px solid transparent; transition:transform .18s ease, background .2s ease;
+  }
+  .btn--fill { background:var(--grad); color:#140208; }
+  .btn--fill:hover { transform:translateY(-2px); }
+  .btn--ghost { border-color:var(--border-2); color:var(--text); background:var(--surface); }
+  .btn--ghost:hover { background:var(--surface-2); transform:translateY(-2px); }
+
+  .metrics {
+    margin-top:clamp(3rem,7vw,4.6rem);
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:1px; background:var(--border);
+    border:1px solid var(--border); border-radius:var(--r); overflow:hidden;
+  }
+  .metric { background:var(--bg); padding:1.4rem 1.3rem; }
+  .metric__n {
+    font-family:"Unbounded",sans-serif; font-weight:700;
+    font-size:clamp(1.9rem,4.6vw,2.9rem); line-height:1;
+    font-variant-numeric:tabular-nums;
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .metric__l { margin-top:.5rem; font-size:.86rem; color:var(--dim); }
+
+  /* ============ VIDEO CARDS ============ */
+  .grid { display:grid; gap:clamp(1rem,2.6vw,1.6rem); }
+  .grid--3 { grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); }
+  .grid--4 { grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); }
+
+  .card {
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--r);
+    overflow:hidden; display:flex; flex-direction:column;
+    backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .card:hover { transform:translateY(-4px); border-color:var(--border-2); box-shadow:var(--shadow); }
+
+  .frame {
+    position:relative; aspect-ratio:16/9; width:100%;
+    background-color:color-mix(in oklab, var(--accent) 9%, var(--solid));
+    background-image:
+      var(--grad-soft),
+      repeating-linear-gradient(135deg, var(--hatch) 0 1px, transparent 1px 12px);
+    display:grid; place-items:center;
+  }
+  .frame.has-video { background:#000; }
+  .frame iframe { width:100%; height:100%; border:0; display:block; }
+  .play {
+    appearance:none; cursor:pointer;
+    width:64px; height:64px; border-radius:999px;
+    border:1px solid var(--border-2);
+    background:color-mix(in oklab, var(--bg) 55%, transparent);
+    backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    color:var(--text);
+    display:grid; place-items:center;
+    transition:transform .18s ease, background .2s ease;
+  }
+  .play svg { width:22px; height:22px; margin-left:3px; }
+  .play:hover { transform:scale(1.08); background:var(--grad); color:#140208; }
+  .frame__tag {
+    position:absolute; left:.8rem; top:.8rem;
+    font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
+    padding:.28rem .55rem; border-radius:999px;
+    background:color-mix(in oklab, var(--bg) 62%, transparent);
+    border:1px solid var(--border-2); color:var(--text);
+  }
+  .card__body { padding:1.15rem 1.2rem 1.35rem; display:flex; flex-direction:column; gap:.45rem; }
+  .card__body p { font-size:.92rem; color:var(--dim); }
+
+  .quote__text { font-size:1.02rem; line-height:1.55; }
+  .person { display:flex; align-items:center; gap:.75rem; margin-top:.5rem; }
+  .avatar {
+    width:44px; height:44px; border-radius:999px; flex-shrink:0;
+    background:var(--grad); color:#140208;
+    display:grid; place-items:center; font-family:"Unbounded",sans-serif; font-weight:700; font-size:.82rem;
+    background-size:cover; background-position:center;
+  }
+  .person b { display:block; font-size:.92rem; font-weight:800; }
+  .person span { display:block; font-size:.8rem; color:var(--mute); }
+
+  .hint {
+    margin-top:1.4rem; font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--mute);
+    display:flex; align-items:center; gap:.5rem;
+  }
+  .hint::before { content:"▸"; color:var(--accent); }
+
+  /* ============ EXPERIENCE ============ */
+  .tl { display:flex; flex-direction:column; gap:1.1rem; }
+  .tl__item {
+    display:grid; grid-template-columns:170px 1fr; gap:1.4rem;
+    padding:1.4rem; border:1px solid var(--border); border-radius:var(--r);
+    background:var(--surface);
+  }
+  .tl__when {
+    font-family:"IBM Plex Mono",monospace; font-size:.82rem; letter-spacing:.02em;
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+    align-self:start;
+  }
+  .tl__role { font-family:"Manrope",sans-serif; font-weight:800; font-size:1.08rem; }
+  .tl__org { color:var(--dim); font-size:.92rem; margin-top:.15rem; }
+  .tl__org a { color:var(--cyan); text-decoration:none; }
+  .tl__org a:hover { text-decoration:underline; }
+  .tl__item ul { margin:.8rem 0 0; padding-left:1.05rem; display:flex; flex-direction:column; gap:.4rem; }
+  .tl__item li { font-size:.92rem; color:var(--dim); max-width:70ch; }
+  .tl__item li::marker { color:var(--accent); }
+  .tl--mini { grid-template-columns:170px 1fr; }
+  .tl--mini p { font-size:.9rem; color:var(--dim); }
+  @media (max-width:640px){
+    .tl__item, .tl--mini { grid-template-columns:1fr; gap:.7rem; }
+  }
+
+  /* ============ SKILLS ============ */
+  .skill {
+    padding:1.3rem; border:1px solid var(--border); border-radius:var(--r);
+    background:var(--surface); display:flex; flex-direction:column; gap:.55rem;
+  }
+  .skill h3 {
+    font-family:"IBM Plex Mono",monospace; font-weight:500; font-size:.8rem;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--cyan);
+  }
+  .skill p { font-size:.94rem; color:var(--dim); }
+  .meta-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin-top:1.4rem; }
+  .meta { padding:1.1rem 1.2rem; border:1px dashed var(--border-2); border-radius:var(--r-sm); }
+  .meta b {
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--mute); display:block; margin-bottom:.35rem;
+  }
+  .meta span { font-size:.9rem; color:var(--dim); }
+
+  /* ============ COMPANIES ============ */
+  .co {
+    position:relative; padding:1.4rem; border:1px solid var(--border); border-radius:var(--r);
+    background:var(--surface); text-decoration:none; color:inherit;
+    display:flex; flex-direction:column; gap:.35rem;
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .co:hover { transform:translateY(-4px); border-color:var(--border-2); box-shadow:var(--shadow); }
+  .co__name { font-family:"Unbounded",sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:-.01em; }
+  .co__role { font-size:.86rem; color:var(--dim); font-family:"IBM Plex Mono",monospace; }
+  .co__go {
+    margin-top:.7rem; font-family:"IBM Plex Mono",monospace; font-size:.76rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--cyan); display:inline-flex; align-items:center; gap:.4rem;
+  }
+  .co__go[data-empty]::after { content:" · TODO"; color:var(--mute); }
+  .linkrow { display:flex; gap:.5rem; margin-top:.6rem; flex-wrap:wrap; }
+  .linkrow a {
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.08em;
+    padding:.22rem .5rem; border:1px solid var(--border-2); border-radius:999px;
+    text-decoration:none; color:var(--dim);
+  }
+  .linkrow a:hover { color:var(--text); border-color:var(--cyan); }
+
+  /* ============ CONTACT ============ */
+  .contact { border-top:1px solid var(--border); }
+  .contact__mail {
+    font-family:"Unbounded",sans-serif; font-weight:700;
+    font-size:clamp(1.5rem,5vw,2.8rem); letter-spacing:-.02em;
+    text-decoration:none; word-break:break-word;
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .contact__mail:hover { text-decoration:underline; text-decoration-color:var(--accent); }
+  .contact__cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.4rem; margin-top:2.4rem; }
+  .contact__cols b {
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--mute); display:block; margin-bottom:.4rem;
+  }
+  .contact__cols a, .contact__cols span { color:var(--text); text-decoration:none; font-size:.98rem; }
+  .contact__cols a:hover { color:var(--cyan); }
+  .socials { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:.3rem; }
+  .socials a {
+    font-family:"IBM Plex Mono",monospace; font-size:.82rem; letter-spacing:.04em;
+    padding:.5rem .9rem; border:1px solid var(--border-2); border-radius:999px;
+    text-decoration:none; color:var(--text);
+    transition:background .2s ease, transform .16s ease;
+  }
+  .socials a:hover { background:var(--grad); color:#140208; transform:translateY(-2px); }
+  .socials a[data-empty] { color:var(--mute); border-style:dashed; }
+
+  /* ============ FOOTER ============ */
+  .foot {
+    border-top:1px solid var(--border); padding:2rem 0 3rem;
+    display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center;
+    font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--mute);
+  }
+  .foot a { color:var(--dim); text-decoration:none; }
+  .foot a:hover { color:var(--text); }
+
+  /* ============ REVEAL ============ */
+  .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce){ .reveal { opacity:1; transform:none; transition:none; } }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+<a class="skip" href="#main" data-i18n="skip">До вмісту</a>
+
+<header class="nav">
+  <a href="#top" class="mark">PK</a>
+  <nav class="nav__links" aria-label="Секції">
+    <a href="#showreel"     data-i18n="nav_work">Ролики</a>
+    <a href="#testimonials" data-i18n="nav_trust">Відгуки</a>
+    <a href="#experience"   data-i18n="nav_exp">Досвід</a>
+    <a href="#skills"       data-i18n="nav_skills">Навички</a>
+    <a href="#companies"    data-i18n="nav_companies">Компанії</a>
+    <a href="#contact"      data-i18n="nav_contact">Контакти</a>
+  </nav>
+  <div class="nav__ctl">
+    <div class="seg" role="group" aria-label="Мова / Language">
+      <button type="button" data-lang="ua" class="is-on">UA</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <button type="button" class="icn" id="themeBtn" aria-label="Змінити тему">◑</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section id="top" class="hero wrap">
+    <p class="hero__kick" data-i18n="hero_kick">Павло Кот — Київ, Україна</p>
+    <p class="eyebrow" data-i18n="hero_eyebrow">Head of Digital · Стратегія, AI та дані</p>
+    <h1 style="margin-top:1.1rem">
+      <span data-i18n="hero_t1">Digital-стратегія,</span><br />
+      <span class="grad" data-i18n="hero_t2">підсилена AI</span>
+    </h1>
+    <p class="lead" data-i18n="hero_sub">Head of Digital, який будує digital-напрям галузевої асоціації та на практиці інтегрує AI (ChatGPT, Claude, Claude Code) у контент-продакшн і роботу з даними. Founder Truman Gifts, співзасновник БФ «СЕНСУМ».</p>
+    <div class="cta">
+      <a class="btn btn--fill" href="#showreel" data-i18n="hero_cta1">Дивитися ролики</a>
+      <a class="btn btn--ghost" href="#contact" data-i18n="hero_cta2">Написати мені</a>
+    </div>
+
+    <div class="metrics reveal" aria-label="Ключові цифри">
+      <div class="metric"><div class="metric__n">13+</div><div class="metric__l" data-i18n="m1_l">років керує digital і продакшном</div></div>
+      <div class="metric"><div class="metric__n">6</div><div class="metric__l" data-i18n="m2_l">компаній і проєктів у портфелі</div></div>
+      <div class="metric"><div class="metric__n">3</div><div class="metric__l" data-i18n="m3_l">AI-інструменти в щоденному стеку</div></div>
+      <div class="metric"><div class="metric__n">×2</div><div class="metric__l" data-i18n="m4_l">бізнеси, запущені з нуля</div></div>
+    </div>
+  </section>
+
+  <!-- ===== SHOWREEL ===== -->
+  <section id="showreel" class="band wrap">
+    <div class="band__head reveal">
+      <p class="eyebrow" data-i18n="sr_eyebrow">Показ · Showreel</p>
+      <h2 data-i18n="sr_title">Мої ролики</h2>
+      <p class="lead" data-i18n="sr_lead">Моушн-дизайн, промо та відеоконтент — від ідеї до фінального рендеру.</p>
+    </div>
+
+    <div class="grid grid--4">
+      <!-- ЗАМІНА ВІДЕО: встав YouTube ID у data-video, напр. data-video="dQw4w9WgXcQ" (або повний embed-URL) -->
+      <article class="card reveal">
+        <div class="frame" data-video="">
+          <span class="frame__tag" data-i18n="reel1_tag">Промо</span>
+          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="card__body">
+          <h3 data-i18n="reel1_title">Промо-ролик асоціації</h3>
+          <p data-i18n="reel1_desc">Імідж-відео для галузевої асоціації девелоперів.</p>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="frame" data-video="">
+          <span class="frame__tag" data-i18n="reel2_tag">Бренд</span>
+          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="card__body">
+          <h3 data-i18n="reel2_title">Моушн-брендинг</h3>
+          <p data-i18n="reel2_desc">Анімована графіка, титри та бренд-елементи.</p>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="frame" data-video="">
+          <span class="frame__tag" data-i18n="reel3_tag">Соціальне</span>
+          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="card__body">
+          <h3 data-i18n="reel3_title">Відео для фонду</h3>
+          <p data-i18n="reel3_desc">Комунікаційний ролик для БФ «СЕНСУМ».</p>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="frame" data-video="">
+          <span class="frame__tag" data-i18n="reel4_tag">AI</span>
+          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="card__body">
+          <h3 data-i18n="reel4_title">AI-відео пайплайн</h3>
+          <p data-i18n="reel4_desc">Контент, зібраний із AI-генерації та монтажу.</p>
+        </div>
+      </article>
+    </div>
+    <p class="hint" data-i18n="sr_hint">Заміни плейсхолдери на свої відео — додай YouTube ID у data-video.</p>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="band wrap">
+    <div class="band__head reveal">
+      <p class="eyebrow" data-i18n="ts_eyebrow">Довіра · Testimonials</p>
+      <h2 data-i18n="ts_title">Відгуки керівників компаній</h2>
+      <p class="lead" data-i18n="ts_lead">Відео-відгуки від топменеджерів, з якими працював.</p>
+    </div>
+
+    <div class="grid grid--3">
+      <!-- ЗАМІНА: data-video = ID відео-відгуку; data-photo = URL фото спікера -->
+      <article class="card reveal">
+        <div class="frame" data-video="">
+          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="card__body">
+          <p class="quote__text" data-i18n="t1_quote">«Місце для відео-відгуку. Додай ролик і цитату від керівника.»</p>
+          <div class="person">
+            <div class="avatar" data-photo="">A</div>
+            <div><b data-i18n="t1_name">Ім'я Прізвище</b><span data-i18n="t1_role">CEO, Назва компанії</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="frame" data-video="">
+          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="card__body">
+          <p class="quote__text" data-i18n="t2_quote">«Місце для відео-відгуку. Додай ролик і цитату від керівника.»</p>
+          <div class="person">
+            <div class="avatar" data-photo="">B</div>
+            <div><b data-i18n="t2_name">Ім'я Прізвище</b><span data-i18n="t2_role">Marketing Director, Назва компанії</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="frame" data-video="">
+          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="card__body">
+          <p class="quote__text" data-i18n="t3_quote">«Місце для відео-відгуку. Додай ролик і цитату від керівника.»</p>
+          <div class="person">
+            <div class="avatar" data-photo="">C</div>
+            <div><b data-i18n="t3_name">Ім'я Прізвище</b><span data-i18n="t3_role">Founder, Назва компанії</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="hint" data-i18n="ts_hint">Заміни фото (data-photo) та відео (data-video), онови ім'я й посаду.</p>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="band wrap">
+    <div class="band__head reveal">
+      <p class="eyebrow" data-i18n="ex_eyebrow">Шлях · Experience</p>
+      <h2 data-i18n="ex_title">Досвід</h2>
+    </div>
+
+    <div class="tl">
+      <article class="tl__item reveal">
+        <div class="tl__when" data-i18n="e1_period">2024 — дотепер</div>
+        <div>
+          <div class="tl__role" data-i18n="e1_role">Head of Digital</div>
+          <div class="tl__org"><a href="https://ua-developers.com.ua/" target="_blank" rel="noopener" data-i18n="e1_org">Українська асоціація девелоперів</a></div>
+          <ul>
+            <li data-i18n="e1_b1">Розробив і веду digital-стратегію: систему контент-планування та календар для Facebook, Instagram, LinkedIn.</li>
+            <li data-i18n="e1_b2">Впровадив AI-інструменти у виробництво тексту, аудіо- та відеоконтенту — пришвидшив цикл продакшну.</li>
+            <li data-i18n="e1_b3">Побудував процес збору й аналізу даних та роботи з базами даних; веду веб-розробку і підтримку сайтів.</li>
+            <li data-i18n="e1_b4">Координую рекламні кампанії та мережу підрядників: брифування, контроль, аналітика результатів.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl__item reveal">
+        <div class="tl__when" data-i18n="e2_period">2022 — дотепер</div>
+        <div>
+          <div class="tl__role" data-i18n="e2_role">Motion Designer</div>
+          <div class="tl__org"><a href="https://crispmotion.com/" target="_blank" rel="noopener">Freelance · Crisp Motion, NY</a></div>
+          <ul><li data-i18n="e2_b1">Моушн-дизайн для Crisp Motion (Нью-Йорк) та інших проєктів: анімація графіки, титри, короткі відео.</li></ul>
+        </div>
+      </article>
+
+      <article class="tl__item reveal">
+        <div class="tl__when" data-i18n="e3_period">квіт. 2023 — дотепер</div>
+        <div>
+          <div class="tl__role" data-i18n="e3_role">Співзасновник</div>
+          <div class="tl__org" data-i18n="e3_org">БО «БФ «СЕНСУМ»</div>
+          <ul>
+            <li data-i18n="e3_b1">Веду комунікації фонду та взаємодію з аудиторією: контент, оновлення, звіти.</li>
+            <li data-i18n="e3_b2">Підтримую фандрейзингові та партнерські ініціативи.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl__item reveal">
+        <div class="tl__when" data-i18n="e4_period">2018 — 2020</div>
+        <div>
+          <div class="tl__role" data-i18n="e4_role">Project Manager / Brand Manager</div>
+          <div class="tl__org"><a href="https://indposhiv.ua/" target="_blank" rel="noopener" data-i18n="e4_org">ТОВ «ІНДПОШИВ»</a></div>
+          <ul>
+            <li data-i18n="e4_b1">Побудував маркетингову стратегію та контент-план, координував продакшн фото/відео і SMM (Instagram, Facebook, YouTube, LinkedIn).</li>
+            <li data-i18n="e4_b2">Керував проєктами: задачі, дедлайни, комунікація між командами; координував створення сайту компанії.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl__item reveal">
+        <div class="tl__when" data-i18n="e5_period">2013 — 2017</div>
+        <div>
+          <div class="tl__role" data-i18n="e5_role">Засновник / CEO</div>
+          <div class="tl__org"><a href="https://trumangifts.com/" target="_blank" rel="noopener">Truman Gifts</a></div>
+          <ul><li data-i18n="e5_b1">Заснував і керував компанією з виробництва та продажу чоловічого одягу й аксесуарів: прямий імпорт брендів, власне виробництво, продуктова лінійка.</li></ul>
+        </div>
+      </article>
+
+      <article class="tl__item tl--mini reveal">
+        <div class="tl__when" data-i18n="ex_earlier_title">Раніше · 2001–2014</div>
+        <p data-i18n="ex_earlier_body">Краудфандер / Project Manager — «Вавилон'13» · Менеджер по роботі з клієнтами — Pillar PR · Локейшн-менеджер — Svetofor Film · Інвестиційний аналітик — «Аспект ЦП» · Лінійний продюсер — 2332 films · Системний адміністратор — «Карт Ойл», «Сток-2 ЛТД».</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="band wrap">
+    <div class="band__head reveal">
+      <p class="eyebrow" data-i18n="sk_eyebrow">Стек · Skills</p>
+      <h2 data-i18n="sk_title">Навички та інструменти</h2>
+    </div>
+
+    <div class="grid grid--3">
+      <div class="skill reveal"><h3 data-i18n="sk1_t">Менеджмент</h3><p data-i18n="sk1_b">Проєктний менеджмент · координація підрядників і команд · бренд-менеджмент і PR</p></div>
+      <div class="skill reveal"><h3 data-i18n="sk2_t">Digital</h3><p data-i18n="sk2_b">Digital-стратегія · контент-планування · SMM · веб-розробка сайтів за допомогою AI (Webflow)</p></div>
+      <div class="skill reveal"><h3 data-i18n="sk3_t">AI</h3><p data-i18n="sk3_b">ChatGPT · Claude · Claude Code — генерація й адаптація тексту, аудіо, відео; дослідницькі та аналітичні задачі</p></div>
+      <div class="skill reveal"><h3 data-i18n="sk4_t">Дані</h3><p data-i18n="sk4_b">Збір, обробка та аналіз даних · робота з базами даних</p></div>
+      <div class="skill reveal"><h3 data-i18n="sk5_t">Реклама й аналітика</h3><p data-i18n="sk5_b">Meta Ads Manager · Google Analytics</p></div>
+      <div class="skill reveal"><h3 data-i18n="sk6_t">Продакшн</h3><p data-i18n="sk6_b">Adobe Photoshop · Illustrator · After Effects · Premiere Pro · Figma</p></div>
+    </div>
+
+    <div class="meta-row reveal">
+      <div class="meta"><b data-i18n="sk_lang_t">Мови</b><span data-i18n="sk_lang_b">Українська — рідна · англійська — B1 · італійська — A2</span></div>
+      <div class="meta"><b data-i18n="sk_edu_t">Освіта</b><span data-i18n="sk_edu_b">НАУ — інформаційні технології (незак. вища) · Коледж НАУ — ПЗ обчислювальної техніки та АС</span></div>
+    </div>
+  </section>
+
+  <!-- ===== COMPANIES ===== -->
+  <section id="companies" class="band wrap">
+    <div class="band__head reveal">
+      <p class="eyebrow" data-i18n="co_eyebrow">Компанії · Companies</p>
+      <h2 data-i18n="co_title">Компанії та проєкти</h2>
+      <p class="lead" data-i18n="co_lead">Організації, у яких працював і які заснував.</p>
+    </div>
+
+    <div class="grid grid--3">
+      <a class="co reveal" href="https://ua-developers.com.ua/" target="_blank" rel="noopener">
+        <span class="co__name">Українська асоціація девелоперів</span>
+        <span class="co__role" data-i18n="c_uad_role">Head of Digital · 2024 — дотепер</span>
+        <span class="linkrow">
+          <a href="https://www.facebook.com/DevelopersUA/" target="_blank" rel="noopener">FB</a>
+          <a href="https://www.instagram.com/ua_developers/" target="_blank" rel="noopener">IG</a>
+          <a href="https://ua.linkedin.com/company/ukrainian-association-of-developers" target="_blank" rel="noopener">IN</a>
+        </span>
+        <span class="co__go" data-i18n="co_visit">Перейти ↗</span>
+      </a>
+
+      <a class="co reveal" href="https://crispmotion.com/" target="_blank" rel="noopener">
+        <span class="co__name">Crisp Motion</span>
+        <span class="co__role" data-i18n="c_crisp_role">Motion Designer · 2022 — дотепер</span>
+        <span class="linkrow">
+          <a href="https://www.facebook.com/crispmotion/" target="_blank" rel="noopener">FB</a>
+          <a href="https://www.linkedin.com/company/crisp-motion" target="_blank" rel="noopener">IN</a>
+        </span>
+        <span class="co__go" data-i18n="co_visit">Перейти ↗</span>
+      </a>
+
+      <!-- СЕНСУМ: публічного сайту не знайдено — встав сюди URL сайту або сторінки фонду -->
+      <a class="co reveal" href="#" data-social="sensum">
+        <span class="co__name">БФ «СЕНСУМ»</span>
+        <span class="co__role" data-i18n="c_sensum_role">Співзасновник · 2023 — дотепер</span>
+        <span class="co__go" data-empty data-i18n="co_visit">Перейти ↗</span>
+      </a>
+
+      <a class="co reveal" href="https://indposhiv.ua/" target="_blank" rel="noopener">
+        <span class="co__name">Indposhiv</span>
+        <span class="co__role" data-i18n="c_indposhiv_role">PM / Brand Manager · 2018 — 2020</span>
+        <span class="co__go" data-i18n="co_visit">Перейти ↗</span>
+      </a>
+
+      <a class="co reveal" href="https://trumangifts.com/" target="_blank" rel="noopener">
+        <span class="co__name">Truman Gifts</span>
+        <span class="co__role" data-i18n="c_truman_role">Засновник / CEO · 2013 — 2017</span>
+        <span class="linkrow"><a href="https://www.facebook.com/trumangifts/" target="_blank" rel="noopener">FB</a></span>
+        <span class="co__go" data-i18n="co_visit">Перейти ↗</span>
+      </a>
+
+      <a class="co reveal" href="https://babylon13.org.ua/" target="_blank" rel="noopener">
+        <span class="co__name">Вавилон'13</span>
+        <span class="co__role" data-i18n="c_babylon_role">Краудфандер / PM · 2014</span>
+        <span class="co__go" data-i18n="co_visit">Перейти ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="band contact wrap">
+    <div class="band__head reveal">
+      <p class="eyebrow" data-i18n="ct_eyebrow">Контакт · Contact</p>
+      <h2 data-i18n="ct_title">Напишіть мені</h2>
+      <p class="lead" data-i18n="ct_lead">Відкритий до ролей Head of Digital, консультацій з AI-продакшну та моушн-проєктів.</p>
+    </div>
+
+    <a class="contact__mail reveal" href="mailto:kotpavlokot@gmail.com">kotpavlokot@gmail.com</a>
+
+    <div class="contact__cols reveal">
+      <div>
+        <b data-i18n="ct_phone_label">Телефон</b>
+        <a href="tel:+380939563302">+38 093 956 33 02</a>
+      </div>
+      <div>
+        <b data-i18n="ct_loc_label">Локація</b>
+        <span data-i18n="ct_loc">Київ, Україна</span>
+      </div>
+      <div>
+        <b data-i18n="ct_social">Соцмережі</b>
+        <!-- ВСТАВ ПОСИЛАННЯ: заміни href="#" на свої профілі -->
+        <div class="socials">
+          <a href="#" data-empty target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" data-empty target="_blank" rel="noopener">Instagram</a>
+          <a href="#" data-empty target="_blank" rel="noopener">Facebook</a>
+          <a href="#" data-empty target="_blank" rel="noopener">YouTube</a>
+          <a href="#" data-empty target="_blank" rel="noopener">Behance</a>
+          <a href="#" data-empty target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot wrap">
+  <span data-i18n="footer_made">Зроблено з AI · 2026</span>
+  <a href="#top" data-i18n="footer_top">Нагору ↑</a>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var STR = {
+    ua: {
+      skip:"До вмісту",
+      nav_work:"Ролики", nav_trust:"Відгуки", nav_exp:"Досвід", nav_skills:"Навички", nav_companies:"Компанії", nav_contact:"Контакти",
+      hero_kick:"Павло Кот — Київ, Україна",
+      hero_eyebrow:"Head of Digital · Стратегія, AI та дані",
+      hero_t1:"Digital-стратегія,", hero_t2:"підсилена AI",
+      hero_sub:"Head of Digital, який будує digital-напрям галузевої асоціації та на практиці інтегрує AI (ChatGPT, Claude, Claude Code) у контент-продакшн і роботу з даними. Founder Truman Gifts, співзасновник БФ «СЕНСУМ».",
+      hero_cta1:"Дивитися ролики", hero_cta2:"Написати мені",
+      m1_l:"років керує digital і продакшном", m2_l:"компаній і проєктів у портфелі", m3_l:"AI-інструменти в щоденному стеку", m4_l:"бізнеси, запущені з нуля",
+      sr_eyebrow:"Показ · Showreel", sr_title:"Мої ролики",
+      sr_lead:"Моушн-дизайн, промо та відеоконтент — від ідеї до фінального рендеру.",
+      reel1_tag:"Промо", reel1_title:"Промо-ролик асоціації", reel1_desc:"Імідж-відео для галузевої асоціації девелоперів.",
+      reel2_tag:"Бренд", reel2_title:"Моушн-брендинг", reel2_desc:"Анімована графіка, титри та бренд-елементи.",
+      reel3_tag:"Соціальне", reel3_title:"Відео для фонду", reel3_desc:"Комунікаційний ролик для БФ «СЕНСУМ».",
+      reel4_tag:"AI", reel4_title:"AI-відео пайплайн", reel4_desc:"Контент, зібраний із AI-генерації та монтажу.",
+      sr_hint:"Заміни плейсхолдери на свої відео — додай YouTube ID у data-video.",
+      ts_eyebrow:"Довіра · Testimonials", ts_title:"Відгуки керівників компаній",
+      ts_lead:"Відео-відгуки від топменеджерів, з якими працював.",
+      t1_quote:"«Місце для відео-відгуку. Додай ролик і цитату від керівника.»",
+      t1_name:"Ім'я Прізвище", t1_role:"CEO, Назва компанії",
+      t2_quote:"«Місце для відео-відгуку. Додай ролик і цитату від керівника.»",
+      t2_name:"Ім'я Прізвище", t2_role:"Marketing Director, Назва компанії",
+      t3_quote:"«Місце для відео-відгуку. Додай ролик і цитату від керівника.»",
+      t3_name:"Ім'я Прізвище", t3_role:"Founder, Назва компанії",
+      ts_hint:"Заміни фото (data-photo) та відео (data-video), онови ім'я й посаду.",
+      ex_eyebrow:"Шлях · Experience", ex_title:"Досвід",
+      e1_period:"2024 — дотепер", e1_role:"Head of Digital", e1_org:"Українська асоціація девелоперів",
+      e1_b1:"Розробив і веду digital-стратегію: систему контент-планування та календар для Facebook, Instagram, LinkedIn.",
+      e1_b2:"Впровадив AI-інструменти у виробництво тексту, аудіо- та відеоконтенту — пришвидшив цикл продакшну.",
+      e1_b3:"Побудував процес збору й аналізу даних та роботи з базами даних; веду веб-розробку і підтримку сайтів.",
+      e1_b4:"Координую рекламні кампанії та мережу підрядників: брифування, контроль, аналітика результатів.",
+      e2_period:"2022 — дотепер", e2_role:"Motion Designer",
+      e2_b1:"Моушн-дизайн для Crisp Motion (Нью-Йорк) та інших проєктів: анімація графіки, титри, короткі відео.",
+      e3_period:"квіт. 2023 — дотепер", e3_role:"Співзасновник", e3_org:"БО «БФ «СЕНСУМ»",
+      e3_b1:"Веду комунікації фонду та взаємодію з аудиторією: контент, оновлення, звіти.",
+      e3_b2:"Підтримую фандрейзингові та партнерські ініціативи.",
+      e4_period:"2018 — 2020", e4_role:"Project Manager / Brand Manager", e4_org:"ТОВ «ІНДПОШИВ»",
+      e4_b1:"Побудував маркетингову стратегію та контент-план, координував продакшн фото/відео і SMM (Instagram, Facebook, YouTube, LinkedIn).",
+      e4_b2:"Керував проєктами: задачі, дедлайни, комунікація між командами; координував створення сайту компанії.",
+      e5_period:"2013 — 2017", e5_role:"Засновник / CEO",
+      e5_b1:"Заснував і керував компанією з виробництва та продажу чоловічого одягу й аксесуарів: прямий імпорт брендів, власне виробництво, продуктова лінійка.",
+      ex_earlier_title:"Раніше · 2001–2014",
+      ex_earlier_body:"Краудфандер / Project Manager — «Вавилон'13» · Менеджер по роботі з клієнтами — Pillar PR · Локейшн-менеджер — Svetofor Film · Інвестиційний аналітик — «Аспект ЦП» · Лінійний продюсер — 2332 films · Системний адміністратор — «Карт Ойл», «Сток-2 ЛТД».",
+      sk_eyebrow:"Стек · Skills", sk_title:"Навички та інструменти",
+      sk1_t:"Менеджмент", sk1_b:"Проєктний менеджмент · координація підрядників і команд · бренд-менеджмент і PR",
+      sk2_t:"Digital", sk2_b:"Digital-стратегія · контент-планування · SMM · веб-розробка сайтів за допомогою AI (Webflow)",
+      sk3_t:"AI", sk3_b:"ChatGPT · Claude · Claude Code — генерація й адаптація тексту, аудіо, відео; дослідницькі та аналітичні задачі",
+      sk4_t:"Дані", sk4_b:"Збір, обробка та аналіз даних · робота з базами даних",
+      sk5_t:"Реклама й аналітика", sk5_b:"Meta Ads Manager · Google Analytics",
+      sk6_t:"Продакшн", sk6_b:"Adobe Photoshop · Illustrator · After Effects · Premiere Pro · Figma",
+      sk_lang_t:"Мови", sk_lang_b:"Українська — рідна · англійська — B1 · італійська — A2",
+      sk_edu_t:"Освіта", sk_edu_b:"НАУ — інформаційні технології (незак. вища) · Коледж НАУ — ПЗ обчислювальної техніки та АС",
+      co_eyebrow:"Компанії · Companies", co_title:"Компанії та проєкти", co_lead:"Організації, у яких працював і які заснував.",
+      c_uad_role:"Head of Digital · 2024 — дотепер", c_crisp_role:"Motion Designer · 2022 — дотепер",
+      c_sensum_role:"Співзасновник · 2023 — дотепер", c_indposhiv_role:"PM / Brand Manager · 2018 — 2020",
+      c_truman_role:"Засновник / CEO · 2013 — 2017", c_babylon_role:"Краудфандер / PM · 2014",
+      co_visit:"Перейти ↗",
+      ct_eyebrow:"Контакт · Contact", ct_title:"Напишіть мені",
+      ct_lead:"Відкритий до ролей Head of Digital, консультацій з AI-продакшну та моушн-проєктів.",
+      ct_phone_label:"Телефон", ct_loc_label:"Локація", ct_loc:"Київ, Україна", ct_social:"Соцмережі",
+      footer_made:"Зроблено з AI · 2026", footer_top:"Нагору ↑"
+    },
+    en: {
+      skip:"Skip to content",
+      nav_work:"Reels", nav_trust:"Testimonials", nav_exp:"Experience", nav_skills:"Skills", nav_companies:"Companies", nav_contact:"Contact",
+      hero_kick:"Pavlo Kot — Kyiv, Ukraine",
+      hero_eyebrow:"Head of Digital · Strategy, AI & Data",
+      hero_t1:"Digital strategy,", hero_t2:"supercharged by AI",
+      hero_sub:"Head of Digital building the digital function of an industry association and putting AI (ChatGPT, Claude, Claude Code) to work across content production and data. Founder of Truman Gifts, co-founder of the SENSUM charity.",
+      hero_cta1:"Watch the reels", hero_cta2:"Get in touch",
+      m1_l:"years leading digital & production", m2_l:"companies & projects in the portfolio", m3_l:"AI tools in the daily stack", m4_l:"businesses launched from zero",
+      sr_eyebrow:"Showreel", sr_title:"My reels",
+      sr_lead:"Motion design, promos and video content — from concept to final render.",
+      reel1_tag:"Promo", reel1_title:"Association promo", reel1_desc:"Image video for the developers' industry association.",
+      reel2_tag:"Brand", reel2_title:"Motion branding", reel2_desc:"Animated graphics, titles and brand elements.",
+      reel3_tag:"Impact", reel3_title:"Foundation video", reel3_desc:"Communications video for the SENSUM charity.",
+      reel4_tag:"AI", reel4_title:"AI video pipeline", reel4_desc:"Content assembled from AI generation and editing.",
+      sr_hint:"Swap the placeholders for your videos — add a YouTube ID in data-video.",
+      ts_eyebrow:"Testimonials", ts_title:"What company leaders say",
+      ts_lead:"Video testimonials from executives I've worked with.",
+      t1_quote:"“Space for a video testimonial. Add a clip and a quote from the leader.”",
+      t1_name:"First Last", t1_role:"CEO, Company name",
+      t2_quote:"“Space for a video testimonial. Add a clip and a quote from the leader.”",
+      t2_name:"First Last", t2_role:"Marketing Director, Company name",
+      t3_quote:"“Space for a video testimonial. Add a clip and a quote from the leader.”",
+      t3_name:"First Last", t3_role:"Founder, Company name",
+      ts_hint:"Replace photo (data-photo) and video (data-video), update name and title.",
+      ex_eyebrow:"Experience", ex_title:"Experience",
+      e1_period:"2024 — present", e1_role:"Head of Digital", e1_org:"Ukrainian Association of Developers",
+      e1_b1:"Built and run the digital strategy: a content-planning system and calendar for Facebook, Instagram, LinkedIn.",
+      e1_b2:"Introduced AI tools into text, audio and video production — shortened the production cycle.",
+      e1_b3:"Set up data collection and analysis and database work for decisions; run web development and site maintenance.",
+      e1_b4:"Coordinate ad campaigns and a contractor network: briefing, oversight, results analytics.",
+      e2_period:"2022 — present", e2_role:"Motion Designer",
+      e2_b1:"Motion design for Crisp Motion (New York) and other projects: animated graphics, titles, short videos.",
+      e3_period:"Apr 2023 — present", e3_role:"Co-founder", e3_org:"SENSUM Charitable Foundation",
+      e3_b1:"Run the foundation's communications and audience engagement: content, updates, reports.",
+      e3_b2:"Support fundraising and partnership initiatives.",
+      e4_period:"2018 — 2020", e4_role:"Project Manager / Brand Manager", e4_org:"Indposhiv",
+      e4_b1:"Built the marketing strategy and content plan, ran photo/video production and SMM (Instagram, Facebook, YouTube, LinkedIn).",
+      e4_b2:"Managed projects: tasks, deadlines, cross-team communication; coordinated the company website build.",
+      e5_period:"2013 — 2017", e5_role:"Founder / CEO",
+      e5_b1:"Founded and ran a company making and selling menswear and accessories: direct brand import, in-house production, a product line.",
+      ex_earlier_title:"Earlier · 2001–2014",
+      ex_earlier_body:"Crowdfunder / Project Manager — Babylon'13 · Account Manager — Pillar PR · Location Manager — Svetofor Film · Investment Analyst — Aspekt CP · Line Producer — 2332 films · System Administrator — Kart Oil, Stock-2 Ltd.",
+      sk_eyebrow:"Skills", sk_title:"Skills & tools",
+      sk1_t:"Management", sk1_b:"Project management · coordinating contractors and teams · brand management & PR",
+      sk2_t:"Digital", sk2_b:"Digital strategy · content planning · SMM · AI-assisted web development (Webflow)",
+      sk3_t:"AI", sk3_b:"ChatGPT · Claude · Claude Code — generating and adapting text, audio, video; research and analysis",
+      sk4_t:"Data", sk4_b:"Data collection, processing and analysis · database work",
+      sk5_t:"Ads & analytics", sk5_b:"Meta Ads Manager · Google Analytics",
+      sk6_t:"Production", sk6_b:"Adobe Photoshop · Illustrator · After Effects · Premiere Pro · Figma",
+      sk_lang_t:"Languages", sk_lang_b:"Ukrainian — native · English — B1 · Italian — A2",
+      sk_edu_t:"Education", sk_edu_b:"NAU — Information Technology (incomplete higher) · NAU College — Computer software & automated systems",
+      co_eyebrow:"Companies", co_title:"Companies & projects", co_lead:"Organisations I've worked for and founded.",
+      c_uad_role:"Head of Digital · 2024 — present", c_crisp_role:"Motion Designer · 2022 — present",
+      c_sensum_role:"Co-founder · 2023 — present", c_indposhiv_role:"PM / Brand Manager · 2018 — 2020",
+      c_truman_role:"Founder / CEO · 2013 — 2017", c_babylon_role:"Crowdfunder / PM · 2014",
+      co_visit:"Visit ↗",
+      ct_eyebrow:"Contact", ct_title:"Let's talk",
+      ct_lead:"Open to Head of Digital roles, AI-production consulting and motion projects.",
+      ct_phone_label:"Phone", ct_loc_label:"Location", ct_loc:"Kyiv, Ukraine", ct_social:"Social",
+      footer_made:"Made with AI · 2026", footer_top:"Back to top ↑"
+    }
+  };
+
+  var root = document.documentElement;
+
+  function setLang(l) {
+    if (!STR[l]) l = "ua";
+    try { localStorage.setItem("pk-lang", l); } catch (e) {}
+    root.lang = (l === "ua") ? "uk" : "en";
+    var dict = STR[l];
+    var nodes = document.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < nodes.length; i++) {
+      var k = nodes[i].getAttribute("data-i18n");
+      if (dict[k] != null) nodes[i].textContent = dict[k];
+    }
+    var segs = document.querySelectorAll(".seg button");
+    for (var j = 0; j < segs.length; j++) {
+      segs[j].classList.toggle("is-on", segs[j].getAttribute("data-lang") === l);
+    }
+  }
+
+  var startLang = "ua";
+  try { startLang = localStorage.getItem("pk-lang") || "ua"; } catch (e) {}
+  setLang(startLang);
+
+  var segBtns = document.querySelectorAll(".seg button");
+  for (var s = 0; s < segBtns.length; s++) {
+    segBtns[s].addEventListener("click", function () { setLang(this.getAttribute("data-lang")); });
+  }
+
+  /* theme toggle */
+  try {
+    var savedT = localStorage.getItem("pk-theme");
+    if (savedT === "light" || savedT === "dark") root.setAttribute("data-theme", savedT);
+  } catch (e) {}
+  var themeBtn = document.getElementById("themeBtn");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var cur = root.getAttribute("data-theme");
+      if (!cur) {
+        cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      var next = (cur === "dark") ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("pk-theme", next); } catch (e) {}
+    });
+  }
+
+  /* video mounting */
+  function mountVideo(frame) {
+    var raw = frame.getAttribute("data-video");
+    var id = raw ? raw.trim() : "";
+    if (!id) return false;
+    var src = /^https?:\/\//.test(id) ? id : ("https://www.youtube.com/embed/" + id);
+    var f = document.createElement("iframe");
+    f.src = src;
+    f.title = "video";
+    f.loading = "lazy";
+    f.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+    f.setAttribute("allowfullscreen", "");
+    frame.innerHTML = "";
+    frame.appendChild(f);
+    frame.classList.add("has-video");
+    return true;
+  }
+  var frames = document.querySelectorAll(".frame");
+  for (var fi = 0; fi < frames.length; fi++) {
+    (function (fr) {
+      if (!mountVideo(fr)) {
+        var btn = fr.querySelector(".play");
+        if (btn) btn.addEventListener("click", function () { mountVideo(fr); });
+      }
+    })(frames[fi]);
+  }
+
+  /* speaker photos */
+  var avs = document.querySelectorAll(".avatar[data-photo]");
+  for (var ai = 0; ai < avs.length; ai++) {
+    var url = avs[ai].getAttribute("data-photo");
+    if (url && url.trim()) {
+      avs[ai].style.backgroundImage = "url('" + url.trim().replace(/'/g, "%27") + "')";
+      avs[ai].textContent = "";
+    }
+  }
+
+  /* reveal on scroll */
+  var reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    for (var r = 0; r < reveals.length; r++) io.observe(reveals[r]);
+  } else {
+    for (var r2 = 0; r2 < reveals.length; r2++) reveals[r2].classList.add("in");
+  }
+})();
+</script>
+
+</html>
