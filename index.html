@@ -230,6 +230,8 @@
   .grid { display:grid; gap:clamp(1rem,2.6vw,1.6rem); }
   .grid--3 { grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); }
   .grid--4 { grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); }
+  .grid--reels { grid-template-columns:repeat(2,1fr); align-items:start; max-width:940px; }
+  @media (min-width:820px){ .grid--reels { grid-template-columns:repeat(3,1fr); } }
 
   .card {
     background:var(--surface); border:1px solid var(--border); border-radius:var(--r);
@@ -249,6 +251,7 @@
   }
   .frame.has-video { background:#000; }
   .frame iframe { width:100%; height:100%; border:0; display:block; }
+  .frame video { width:100%; height:100%; object-fit:cover; display:block; background:#000; }
   .play {
     appearance:none; cursor:pointer;
     width:64px; height:64px; border-radius:999px;
@@ -262,7 +265,7 @@
   .play svg { width:22px; height:22px; margin-left:3px; }
   .play:hover { transform:scale(1.08); background:var(--grad); color:#140208; }
   .frame__tag {
-    position:absolute; left:.8rem; top:.8rem;
+    position:absolute; left:.8rem; top:.8rem; z-index:2; pointer-events:none;
     font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
     padding:.28rem .55rem; border-radius:999px;
     background:color-mix(in oklab, var(--bg) 62%, transparent);
@@ -452,53 +455,73 @@
       <p class="lead" data-i18n="sr_lead">Моушн-дизайн, промо та відеоконтент — від ідеї до фінального рендеру.</p>
     </div>
 
-    <div class="grid grid--4">
-      <!-- ЗАМІНА ВІДЕО: встав YouTube ID у data-video, напр. data-video="dQw4w9WgXcQ" (або повний embed-URL) -->
+    <div class="grid grid--reels">
       <article class="card reveal">
-        <div class="frame" data-video="">
-          <span class="frame__tag" data-i18n="reel1_tag">Промо</span>
-          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="frame" style="aspect-ratio:9/16">
+          <span class="frame__tag" data-i18n="reel1_tag">Моушн</span>
+          <video src="assets/reel-dattalion.mp4" poster="assets/poster-dattalion.jpg" controls preload="none" playsinline></video>
         </div>
         <div class="card__body">
-          <h3 data-i18n="reel1_title">Промо-ролик асоціації</h3>
-          <p data-i18n="reel1_desc">Імідж-відео для галузевої асоціації девелоперів.</p>
+          <h3 data-i18n="reel1_title">Dattalion</h3>
+          <p data-i18n="reel1_desc">Моушн-графіка для візуального архіву Dattalion.</p>
         </div>
       </article>
 
       <article class="card reveal">
-        <div class="frame" data-video="">
-          <span class="frame__tag" data-i18n="reel2_tag">Бренд</span>
-          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="frame" style="aspect-ratio:1/1">
+          <span class="frame__tag" data-i18n="reel2_tag">Проєкт</span>
+          <video src="assets/reel-ukryttia.mp4" poster="assets/poster-ukryttia.jpg" controls preload="none" playsinline></video>
         </div>
         <div class="card__body">
-          <h3 data-i18n="reel2_title">Моушн-брендинг</h3>
-          <p data-i18n="reel2_desc">Анімована графіка, титри та бренд-елементи.</p>
+          <h3 data-i18n="reel2_title">УКРИТТЯ</h3>
+          <p data-i18n="reel2_desc">Титри та графіка для проєкту «Укриття».</p>
         </div>
       </article>
 
       <article class="card reveal">
-        <div class="frame" data-video="">
-          <span class="frame__tag" data-i18n="reel3_tag">Соціальне</span>
-          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="frame" style="aspect-ratio:9/16">
+          <span class="frame__tag" data-i18n="reel3_tag">Промо</span>
+          <video src="assets/reel-simple-clay.mp4" poster="assets/poster-simple-clay.jpg" controls preload="none" playsinline></video>
         </div>
         <div class="card__body">
-          <h3 data-i18n="reel3_title">Відео для фонду</h3>
-          <p data-i18n="reel3_desc">Комунікаційний ролик для БФ «СЕНСУМ».</p>
+          <h3 data-i18n="reel3_title">Simple Clay</h3>
+          <p data-i18n="reel3_desc">Промо-ролик бренду Simple Clay.</p>
         </div>
       </article>
 
       <article class="card reveal">
-        <div class="frame" data-video="">
-          <span class="frame__tag" data-i18n="reel4_tag">AI</span>
-          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="frame" style="aspect-ratio:9/16">
+          <span class="frame__tag" data-i18n="reel4_tag">Бренд</span>
+          <video src="assets/reel-food.mp4" poster="assets/poster-food.jpg" controls preload="none" playsinline></video>
         </div>
         <div class="card__body">
-          <h3 data-i18n="reel4_title">AI-відео пайплайн</h3>
-          <p data-i18n="reel4_desc">Контент, зібраний із AI-генерації та монтажу.</p>
+          <h3 data-i18n="reel4_title">Фуд-бренд</h3>
+          <p data-i18n="reel4_desc">Анімований ролик для фуд-бренду.</p>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="frame" style="aspect-ratio:9/16">
+          <span class="frame__tag" data-i18n="reel5_tag">Кліп</span>
+          <video src="assets/reel-to-lviv.mp4" poster="assets/poster-to-lviv.jpg" controls preload="none" playsinline></video>
+        </div>
+        <div class="card__body">
+          <h3 data-i18n="reel5_title">To Lviv</h3>
+          <p data-i18n="reel5_desc">Короткий подорожній відеокліп.</p>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="frame" style="aspect-ratio:1/1">
+          <span class="frame__tag" data-i18n="reel6_tag">Лого</span>
+          <video src="assets/reel-logo-w.mp4" poster="assets/poster-logo-w.jpg" controls preload="none" playsinline></video>
+        </div>
+        <div class="card__body">
+          <h3 data-i18n="reel6_title">Лого в русі</h3>
+          <p data-i18n="reel6_desc">Анімація логотипа.</p>
         </div>
       </article>
     </div>
-    <p class="hint" data-i18n="sr_hint">Заміни плейсхолдери на свої відео — додай YouTube ID у data-video.</p>
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
@@ -761,11 +784,12 @@
       m1_l:"років керує digital і продакшном", m2_l:"компаній і проєктів у портфелі", m3_l:"AI-інструменти в щоденному стеку", m4_l:"бізнеси, запущені з нуля",
       sr_eyebrow:"Показ · Showreel", sr_title:"Мої ролики",
       sr_lead:"Моушн-дизайн, промо та відеоконтент — від ідеї до фінального рендеру.",
-      reel1_tag:"Промо", reel1_title:"Промо-ролик асоціації", reel1_desc:"Імідж-відео для галузевої асоціації девелоперів.",
-      reel2_tag:"Бренд", reel2_title:"Моушн-брендинг", reel2_desc:"Анімована графіка, титри та бренд-елементи.",
-      reel3_tag:"Соціальне", reel3_title:"Відео для фонду", reel3_desc:"Комунікаційний ролик для БФ «СЕНСУМ».",
-      reel4_tag:"AI", reel4_title:"AI-відео пайплайн", reel4_desc:"Контент, зібраний із AI-генерації та монтажу.",
-      sr_hint:"Заміни плейсхолдери на свої відео — додай YouTube ID у data-video.",
+      reel1_tag:"Моушн", reel1_title:"Dattalion", reel1_desc:"Моушн-графіка для візуального архіву Dattalion.",
+      reel2_tag:"Проєкт", reel2_title:"УКРИТТЯ", reel2_desc:"Титри та графіка для проєкту «Укриття».",
+      reel3_tag:"Промо", reel3_title:"Simple Clay", reel3_desc:"Промо-ролик бренду Simple Clay.",
+      reel4_tag:"Бренд", reel4_title:"Фуд-бренд", reel4_desc:"Анімований ролик для фуд-бренду.",
+      reel5_tag:"Кліп", reel5_title:"To Lviv", reel5_desc:"Короткий подорожній відеокліп.",
+      reel6_tag:"Лого", reel6_title:"Лого в русі", reel6_desc:"Анімація логотипа.",
       ts_eyebrow:"Довіра · Testimonials", ts_title:"Відгуки керівників компаній",
       ts_lead:"Відео-відгуки від топменеджерів, з якими працював.",
       t1_quote:"«Місце для відео-відгуку. Додай ролик і цитату від керівника.»",
@@ -823,11 +847,12 @@
       m1_l:"years leading digital & production", m2_l:"companies & projects in the portfolio", m3_l:"AI tools in the daily stack", m4_l:"businesses launched from zero",
       sr_eyebrow:"Showreel", sr_title:"My reels",
       sr_lead:"Motion design, promos and video content — from concept to final render.",
-      reel1_tag:"Promo", reel1_title:"Association promo", reel1_desc:"Image video for the developers' industry association.",
-      reel2_tag:"Brand", reel2_title:"Motion branding", reel2_desc:"Animated graphics, titles and brand elements.",
-      reel3_tag:"Impact", reel3_title:"Foundation video", reel3_desc:"Communications video for the SENSUM charity.",
-      reel4_tag:"AI", reel4_title:"AI video pipeline", reel4_desc:"Content assembled from AI generation and editing.",
-      sr_hint:"Swap the placeholders for your videos — add a YouTube ID in data-video.",
+      reel1_tag:"Motion", reel1_title:"Dattalion", reel1_desc:"Motion graphics for the Dattalion visual archive.",
+      reel2_tag:"Project", reel2_title:"UKRYTTIA", reel2_desc:"Titles and graphics for the “Ukryttia” project.",
+      reel3_tag:"Promo", reel3_title:"Simple Clay", reel3_desc:"Promo reel for the Simple Clay brand.",
+      reel4_tag:"Brand", reel4_title:"Food brand", reel4_desc:"Animated reel for a food brand.",
+      reel5_tag:"Clip", reel5_title:"To Lviv", reel5_desc:"Short travel video clip.",
+      reel6_tag:"Logo", reel6_title:"Logo in motion", reel6_desc:"Logo animation.",
       ts_eyebrow:"Testimonials", ts_title:"What company leaders say",
       ts_lead:"Video testimonials from executives I've worked with.",
       t1_quote:"“Space for a video testimonial. Add a clip and a quote from the leader.”",
