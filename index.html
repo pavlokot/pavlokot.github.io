@@ -157,9 +157,9 @@
     border-bottom:1px solid var(--border);
   }
   .mark {
-    font-family:"Unbounded",sans-serif; font-weight:900; font-size:1.05rem;
-    letter-spacing:.02em; text-decoration:none;
-    padding:.28rem .5rem; border:1px solid var(--border-2); border-radius:8px;
+    font-family:"Unbounded",sans-serif; font-weight:700; font-size:.8rem;
+    letter-spacing:.04em; text-decoration:none; white-space:nowrap;
+    padding:.34rem .6rem; border:1px solid var(--border-2); border-radius:8px;
     background:var(--grad-soft);
   }
   .nav__links { display:flex; gap:1.4rem; margin-left:.4rem; flex:1; flex-wrap:wrap; }
@@ -414,7 +414,7 @@
 <a class="skip" href="#main" data-i18n="skip">До вмісту</a>
 
 <header class="nav">
-  <a href="#top" class="mark">PK</a>
+  <a href="#top" class="mark" data-i18n="mark">Павло Кот</a>
   <nav class="nav__links" aria-label="Секції">
     <a href="#experience"   data-i18n="nav_exp">Досвід</a>
     <a href="#skills"       data-i18n="nav_skills">Навички</a>
@@ -458,7 +458,7 @@
   <!-- ===== EXPERIENCE ===== -->
   <section id="experience" class="band wrap">
     <div class="band__head reveal">
-      <p class="eyebrow" data-i18n="ex_eyebrow">Шлях · Experience</p>
+      <p class="eyebrow" data-i18n="ex_eyebrow">Шлях</p>
       <h2 data-i18n="ex_title">Досвід</h2>
     </div>
 
@@ -532,7 +532,7 @@
   <!-- ===== SKILLS ===== -->
   <section id="skills" class="band wrap">
     <div class="band__head reveal">
-      <p class="eyebrow" data-i18n="sk_eyebrow">Стек · Skills</p>
+      <p class="eyebrow" data-i18n="sk_eyebrow">Стек</p>
       <h2 data-i18n="sk_title">Навички та інструменти</h2>
     </div>
 
@@ -554,7 +554,7 @@
   <!-- ===== TESTIMONIALS ===== -->
   <section id="testimonials" class="band wrap">
     <div class="band__head reveal">
-      <p class="eyebrow" data-i18n="ts_eyebrow">Довіра · Testimonials</p>
+      <p class="eyebrow" data-i18n="ts_eyebrow">Довіра</p>
       <h2 data-i18n="ts_title">Відгуки керівників компаній</h2>
       <p class="lead" data-i18n="ts_lead">Відео-відгуки від топменеджерів, з якими працював.</p>
     </div>
@@ -606,7 +606,7 @@
   <!-- ===== SHOWREEL ===== -->
   <section id="showreel" class="band wrap">
     <div class="band__head reveal">
-      <p class="eyebrow" data-i18n="sr_eyebrow">Показ · Showreel</p>
+      <p class="eyebrow" data-i18n="sr_eyebrow">Показ</p>
       <h2 data-i18n="sr_title">Мої ролики</h2>
       <p class="lead" data-i18n="sr_lead">Моушн-дизайн, промо та відеоконтент — від ідеї до фінального рендеру.</p>
     </div>
@@ -749,7 +749,7 @@
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="band contact wrap">
     <div class="band__head reveal">
-      <p class="eyebrow" data-i18n="ct_eyebrow">Контакт · Contact</p>
+      <p class="eyebrow" data-i18n="ct_eyebrow">Контакт</p>
       <h2 data-i18n="ct_title">Напишіть мені</h2>
       <p class="lead" data-i18n="ct_lead">Відкритий до ролей Head of Digital, консультацій з AI-продакшну та моушн-проєктів.</p>
     </div>
@@ -788,7 +788,7 @@
 
   var STR = {
     ua: {
-      skip:"До вмісту",
+      skip:"До вмісту", mark:"Павло Кот",
       nav_work:"Ролики", nav_trust:"Відгуки", nav_exp:"Досвід", nav_skills:"Навички", nav_companies:"Компанії", nav_contact:"Контакти",
       hero_kick:"Павло Кот — Київ, Україна",
       hero_eyebrow:"Head of Digital · Стратегія, AI та дані",
@@ -796,7 +796,7 @@
       hero_sub:"Head of Digital, який будує digital-напрям галузевої асоціації та на практиці інтегрує AI (ChatGPT, Claude, Claude Code) у контент-продакшн і роботу з даними. Founder Truman Gifts, співзасновник БФ «СЕНСУМ».",
       hero_cta1:"Дивитися ролики", hero_cta2:"Написати мені",
       m1_l:"років керує digital і продакшном", m2_l:"компаній і проєктів у портфелі", m3_l:"AI-інструменти в щоденному стеку", m4_l:"бізнеси, запущені з нуля",
-      sr_eyebrow:"Показ · Showreel", sr_title:"Мої ролики",
+      sr_eyebrow:"Показ", sr_title:"Мої ролики",
       sr_lead:"Моушн-дизайн, промо та відеоконтент — від ідеї до фінального рендеру.",
       reel1_tag:"Моушн", reel1_title:"Dattalion", reel1_desc:"Моушн-графіка для візуального архіву Dattalion.",
       reel2_tag:"Проєкт", reel2_title:"УКРИТТЯ", reel2_desc:"Титри та графіка для проєкту «Укриття».",
@@ -810,7 +810,7 @@
       reel10_tag:"YouTube", reel10_title:"Чиста правда", reel10_desc:"Заставка та титри для ток-шоу «Чиста правда».",
       reel11_tag:"YouTube", reel11_title:"Голі й смішні", reel11_desc:"Графіка та титри для випуску шоу.",
       reel12_tag:"YouTube", reel12_title:"Molodo", reel12_desc:"Колаж-анімація для проєкту Molodo.",
-      ts_eyebrow:"Довіра · Testimonials", ts_title:"Відгуки керівників компаній",
+      ts_eyebrow:"Довіра", ts_title:"Відгуки керівників компаній",
       ts_lead:"Відео-відгуки від топменеджерів, з якими працював.",
       t1_quote:"«Місце для відео-відгуку. Додай ролик і цитату від керівника.»",
       t1_name:"Ім'я Прізвище", t1_role:"CEO, Назва компанії",
@@ -819,7 +819,7 @@
       t3_quote:"«Місце для відео-відгуку. Додай ролик і цитату від керівника.»",
       t3_name:"Ім'я Прізвище", t3_role:"Founder, Назва компанії",
       ts_hint:"Заміни фото (data-photo) та відео (data-video), онови ім'я й посаду.",
-      ex_eyebrow:"Шлях · Experience", ex_title:"Досвід",
+      ex_eyebrow:"Шлях", ex_title:"Досвід",
       e1_period:"2024 — дотепер", e1_role:"Head of Digital", e1_org:"Українська асоціація девелоперів",
       e1_b1:"Розробив і веду digital-стратегію: систему контент-планування та календар для Facebook, Instagram, LinkedIn.",
       e1_b2:"Впровадив AI-інструменти у виробництво тексту, аудіо- та відеоконтенту — пришвидшив цикл продакшну.",
@@ -838,7 +838,7 @@
       e5_b1:"Заснував і керував компанією з виробництва та продажу чоловічого одягу й аксесуарів: прямий імпорт брендів, власне виробництво, продуктова лінійка.",
       ex_earlier_title:"Раніше · 2001–2014",
       ex_earlier_body:"Краудфандер / Project Manager — «Вавилон'13» · Менеджер по роботі з клієнтами — Pillar PR · Локейшн-менеджер — Svetofor Film · Інвестиційний аналітик — «Аспект ЦП» · Лінійний продюсер — 2332 films · Системний адміністратор — «Карт Ойл», «Сток-2 ЛТД».",
-      sk_eyebrow:"Стек · Skills", sk_title:"Навички та інструменти",
+      sk_eyebrow:"Стек", sk_title:"Навички та інструменти",
       sk1_t:"Менеджмент", sk1_b:"Проєктний менеджмент · координація підрядників і команд · бренд-менеджмент і PR",
       sk2_t:"Digital", sk2_b:"Digital-стратегія · контент-планування · SMM · веб-розробка сайтів за допомогою AI (Webflow) · розробка чат-ботів",
       sk3_t:"AI", sk3_b:"ChatGPT · Claude · Claude Code — генерація й адаптація тексту, аудіо, відео; дослідницькі та аналітичні задачі",
@@ -852,13 +852,13 @@
       c_sensum_role:"Співзасновник · 2023 — дотепер", c_sensum_report:"Звіт за 3 роки", c_indposhiv_role:"PM / Brand Manager · 2018 — 2020",
       c_truman_role:"Засновник / CEO · 2013 — 2017", c_babylon_role:"Краудфандер / PM · 2014",
       co_visit:"Перейти ↗",
-      ct_eyebrow:"Контакт · Contact", ct_title:"Напишіть мені",
+      ct_eyebrow:"Контакт", ct_title:"Напишіть мені",
       ct_lead:"Відкритий до ролей Head of Digital, консультацій з AI-продакшну та моушн-проєктів.",
       ct_phone_label:"Телефон", ct_loc_label:"Локація", ct_loc:"Київ, Україна", ct_social:"Соцмережі",
       footer_made:"Зроблено з AI · 2026", footer_top:"Нагору ↑"
     },
     en: {
-      skip:"Skip to content",
+      skip:"Skip to content", mark:"Pavlo Kot",
       nav_work:"Reels", nav_trust:"Testimonials", nav_exp:"Experience", nav_skills:"Skills", nav_companies:"Companies", nav_contact:"Contact",
       hero_kick:"Pavlo Kot — Kyiv, Ukraine",
       hero_eyebrow:"Head of Digital · Strategy, AI & Data",
