@@ -192,6 +192,15 @@
 
   /* ============ HERO ============ */
   .hero { padding-block:clamp(4.5rem,12vw,9rem) clamp(3.5rem,8vw,6rem); }
+  .hero__photo {
+    width:clamp(104px,15vw,164px); aspect-ratio:1;
+    border-radius:50%; padding:3px; background:var(--grad);
+    margin-bottom:1.7rem; box-shadow:var(--shadow);
+  }
+  .hero__photo img {
+    width:100%; height:100%; border-radius:50%;
+    object-fit:cover; display:block; border:3px solid var(--bg);
+  }
   .hero__kick {
     font-family:"IBM Plex Mono",monospace; font-size:.85rem; letter-spacing:.1em;
     color:var(--mute); margin-bottom:1.4rem;
@@ -427,6 +436,7 @@
 
   <!-- ===== HERO ===== -->
   <section id="top" class="hero wrap">
+    <div class="hero__photo"><img src="assets/pavlo.jpg" alt="Павло Кот" width="600" height="600" fetchpriority="high" /></div>
     <p class="hero__kick" data-i18n="hero_kick">Павло Кот — Київ, Україна</p>
     <p class="eyebrow" data-i18n="hero_eyebrow">Head of Digital · Стратегія, AI та дані</p>
     <h1 style="margin-top:1.1rem">
