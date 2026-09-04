@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pavlokot.github.io/sitemap.xml
