@@ -366,6 +366,27 @@
   }
   .linkrow a:hover { color:var(--text); border-color:var(--cyan); }
 
+  /* ============ MEDIA ============ */
+  .media-feat { max-width:640px; margin-bottom:clamp(1.6rem,4vw,2.4rem); }
+  .media-feat .frame { border:1px solid var(--border); border-radius:var(--r); overflow:hidden; background:#000; }
+  .media-feat__cap { margin-top:.7rem; font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--mute); }
+  .press { display:grid; gap:clamp(.8rem,2vw,1.1rem); grid-template-columns:repeat(auto-fit,minmax(258px,1fr)); }
+  .press a {
+    display:flex; flex-direction:column; gap:.4rem;
+    padding:1.3rem; border:1px solid var(--border); border-radius:var(--r);
+    background:var(--surface); text-decoration:none; color:inherit;
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .press a:hover { transform:translateY(-4px); border-color:var(--border-2); box-shadow:var(--shadow); }
+  .press__src { font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan); }
+  .press__t { font-family:"Manrope",sans-serif; font-weight:700; font-size:1rem; line-height:1.35; }
+  .press__go { margin-top:.2rem; font-family:"IBM Plex Mono",monospace; font-size:.74rem; letter-spacing:.06em; color:var(--mute); }
+  .airs { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:clamp(1.2rem,3vw,1.8rem); }
+  .airs span {
+    font-family:"IBM Plex Mono",monospace; font-size:.78rem; letter-spacing:.03em;
+    padding:.42rem .8rem; border:1px solid var(--border-2); border-radius:999px; color:var(--dim);
+  }
+
   /* ============ CONTACT ============ */
   .contact { border-top:1px solid var(--border); }
   .contact__mail {
@@ -420,6 +441,7 @@
     <a href="#skills"       data-i18n="nav_skills">Навички</a>
     <a href="#testimonials" data-i18n="nav_trust">Відгуки</a>
     <a href="#showreel"     data-i18n="nav_work">Ролики</a>
+    <a href="#media"        data-i18n="nav_media">Медіа</a>
     <a href="#contact"      data-i18n="nav_contact">Контакти</a>
   </nav>
   <div class="nav__ctl">
@@ -523,9 +545,18 @@
         </div>
       </article>
 
+      <article class="tl__item reveal">
+        <div class="tl__when" data-i18n="e6_period">2012 — 2014</div>
+        <div>
+          <div class="tl__role" data-i18n="e6_role">Лінійний продюсер</div>
+          <div class="tl__org" data-i18n="e6_org">2332 films</div>
+          <ul><li data-i18n="e6_b1">Лінійний продюсер проєкту «Один день Євро» (канал «Україна»); пошук локацій та організація зйомок у київських продакшнах.</li></ul>
+        </div>
+      </article>
+
       <article class="tl__item tl--mini reveal">
         <div class="tl__when" data-i18n="ex_earlier_title">Раніше · 2001–2014</div>
-        <p data-i18n="ex_earlier_body">Краудфандер / Project Manager — «Вавилон'13»: 2 краудфандингові кампанії (Biggggidea, Indiegogo), кінопокази у Вільнюсі та Амстердамі · Менеджер по роботі з клієнтами — Pillar PR · Локейшн-менеджер — Svetofor Film · Інвестиційний аналітик — «Аспект ЦП» · Лінійний продюсер — 2332 films · Системний адміністратор — «Карт Ойл», «Сток-2 ЛТД».</p>
+        <p data-i18n="ex_earlier_body">Краудфандер / Project Manager — «Вавилон'13»: 2 краудфандингові кампанії (Biggggidea, Indiegogo), кінопокази у Вільнюсі та Амстердамі · Менеджер по роботі з клієнтами — Pillar PR · Локейшн-менеджер — Svetofor Film · Інвестиційний аналітик — «Аспект ЦП» · Системний адміністратор — «Карт Ойл», «Сток-2 ЛТД».</p>
       </article>
     </div>
   </section>
@@ -748,6 +779,47 @@
     </div>
   </section>
 
+  <!-- ===== MEDIA ===== -->
+  <section id="media" class="band wrap">
+    <div class="band__head reveal">
+      <p class="eyebrow" data-i18n="md_eyebrow">Медіа</p>
+      <h2 data-i18n="md_title">Медіа та преса</h2>
+      <p class="lead" data-i18n="md_lead">Ефіри, інтерв'ю та публікації.</p>
+    </div>
+
+    <div class="media-feat reveal">
+      <div class="frame" style="aspect-ratio:16/9">
+        <iframe src="https://www.youtube.com/embed/h_6SYz-DHGk?start=76" title="Старт-UP Show з Nescafe — Truman (2014)" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <p class="media-feat__cap" data-i18n="md_feat_cap">Старт-UP Show з Nescafe — про Truman · 2014</p>
+    </div>
+
+    <div class="press reveal">
+      <a href="https://bit.ua/2017/11/pasha-kot/" target="_blank" rel="noopener">
+        <span class="press__src">bit.ua · 2017</span>
+        <span class="press__t" data-i18n="md_p1">«Говорить чоловік»: інтерв'ю про речі для справжніх чоловіків</span>
+        <span class="press__go" data-i18n="md_read">Читати ↗</span>
+      </a>
+      <a href="https://biggggidea.com/practices/1285/" target="_blank" rel="noopener">
+        <span class="press__src">biggggidea.com</span>
+        <span class="press__t" data-i18n="md_p2">«Вавилон має бути зруйнований»: кейс краудфандингу «Вавилон'13»</span>
+        <span class="press__go" data-i18n="md_read">Читати ↗</span>
+      </a>
+      <a href="https://www.youtube.com/watch?v=h_6SYz-DHGk&t=76s" target="_blank" rel="noopener">
+        <span class="press__src">YouTube · 2014</span>
+        <span class="press__t" data-i18n="md_p3">Старт-UP Show з Nescafe — Truman у прямому ефірі</span>
+        <span class="press__go" data-i18n="md_watch">Дивитися ↗</span>
+      </a>
+    </div>
+
+    <div class="airs reveal" aria-label="Ефіри та згадки">
+      <span>Radio «Аристократи»</span>
+      <span>5 канал</span>
+      <span>M1</span>
+      <span>Канал «Україна»</span>
+    </div>
+  </section>
+
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="band contact wrap">
     <div class="band__head reveal">
@@ -791,7 +863,7 @@
   var STR = {
     ua: {
       skip:"До вмісту", mark:"Павло Кот",
-      nav_work:"Ролики", nav_trust:"Відгуки", nav_exp:"Досвід", nav_skills:"Навички", nav_companies:"Компанії", nav_contact:"Контакти",
+      nav_work:"Ролики", nav_trust:"Відгуки", nav_exp:"Досвід", nav_skills:"Навички", nav_companies:"Компанії", nav_media:"Медіа", nav_contact:"Контакти",
       hero_kick:"Павло Кот — Київ, Україна",
       hero_eyebrow:"Head of Digital · Стратегія, AI та дані",
       hero_t1:"Digital-стратегія,", hero_t2:"підсилена AI",
@@ -839,8 +911,10 @@
       e4_b3:"Паралельно як Brand Manager створив бренд QUILL (український спортивний одяг) з нуля: аналіз ринку й конкурентів, стратегія розвитку, контент-план.",
       e5_period:"2013 — 2017", e5_role:"Засновник / CEO",
       e5_b1:"Заснував і керував компанією з виробництва та продажу чоловічого одягу й аксесуарів: прямий імпорт брендів, власне виробництво, продуктова лінійка.",
+      e6_period:"2012 — 2014", e6_role:"Лінійний продюсер", e6_org:"2332 films",
+      e6_b1:"Лінійний продюсер проєкту «Один день Євро» (канал «Україна»); пошук локацій та організація зйомок у київських продакшнах.",
       ex_earlier_title:"Раніше · 2001–2014",
-      ex_earlier_body:"Краудфандер / Project Manager — «Вавилон'13»: 2 краудфандингові кампанії (Biggggidea, Indiegogo), кінопокази у Вільнюсі та Амстердамі · Менеджер по роботі з клієнтами — Pillar PR · Локейшн-менеджер — Svetofor Film · Інвестиційний аналітик — «Аспект ЦП» · Лінійний продюсер — 2332 films · Системний адміністратор — «Карт Ойл», «Сток-2 ЛТД».",
+      ex_earlier_body:"Краудфандер / Project Manager — «Вавилон'13»: 2 краудфандингові кампанії (Biggggidea, Indiegogo), кінопокази у Вільнюсі та Амстердамі · Менеджер по роботі з клієнтами — Pillar PR · Локейшн-менеджер — Svetofor Film · Інвестиційний аналітик — «Аспект ЦП» · Системний адміністратор — «Карт Ойл», «Сток-2 ЛТД».",
       sk_eyebrow:"Стек", sk_title:"Навички та інструменти",
       sk1_t:"Менеджмент", sk1_b:"Проєктний менеджмент · координація підрядників і команд · бренд-менеджмент і PR",
       sk2_t:"Digital", sk2_b:"Digital-стратегія · контент-планування · SMM · веб-розробка сайтів за допомогою AI · розробка чат-ботів",
@@ -856,6 +930,12 @@
       c_sensum_role:"Співзасновник · 2023 — дотепер", c_sensum_report:"Звіт за 3 роки", c_indposhiv_role:"PM / Brand Manager · 2018 — 2020",
       c_truman_role:"Засновник / CEO · 2013 — 2017", c_babylon_role:"Краудфандер / PM · 2014",
       co_visit:"Перейти ↗",
+      md_eyebrow:"Медіа", md_title:"Медіа та преса", md_lead:"Ефіри, інтерв'ю та публікації.",
+      md_feat_cap:"Старт-UP Show з Nescafe — про Truman · 2014",
+      md_p1:"«Говорить чоловік»: інтерв'ю про речі для справжніх чоловіків",
+      md_p2:"«Вавилон має бути зруйнований»: кейс краудфандингу «Вавилон'13»",
+      md_p3:"Старт-UP Show з Nescafe — Truman у прямому ефірі",
+      md_read:"Читати ↗", md_watch:"Дивитися ↗",
       ct_eyebrow:"Контакт", ct_title:"Напишіть мені",
       ct_lead:"Відкритий до ролей Head of Digital, консультацій з AI-продакшну та моушн-проєктів.",
       ct_phone_label:"Телефон", ct_loc_label:"Локація", ct_loc:"Київ, Україна", ct_social:"Соцмережі",
@@ -863,7 +943,7 @@
     },
     en: {
       skip:"Skip to content", mark:"Pavlo Kot",
-      nav_work:"Reels", nav_trust:"Testimonials", nav_exp:"Experience", nav_skills:"Skills", nav_companies:"Companies", nav_contact:"Contact",
+      nav_work:"Reels", nav_trust:"Testimonials", nav_exp:"Experience", nav_skills:"Skills", nav_companies:"Companies", nav_media:"Media", nav_contact:"Contact",
       hero_kick:"Pavlo Kot — Kyiv, Ukraine",
       hero_eyebrow:"Head of Digital · Strategy, AI & Data",
       hero_t1:"Digital strategy,", hero_t2:"supercharged by AI",
@@ -911,8 +991,10 @@
       e4_b3:"In parallel, as Brand Manager built the QUILL brand (Ukrainian sportswear) from scratch: market and competitor analysis, growth strategy, content plan.",
       e5_period:"2013 — 2017", e5_role:"Founder / CEO",
       e5_b1:"Founded and ran a company making and selling menswear and accessories: direct brand import, in-house production, a product line.",
+      e6_period:"2012 — 2014", e6_role:"Line Producer", e6_org:"2332 films",
+      e6_b1:"Line producer on ‘One Day of Euro’ (Ukraïna TV); location scouting and shoot coordination at Kyiv production houses.",
       ex_earlier_title:"Earlier · 2001–2014",
-      ex_earlier_body:"Crowdfunder / Project Manager — Babylon'13: two crowdfunding campaigns (Biggggidea, Indiegogo), film screenings in Vilnius and Amsterdam · Account Manager — Pillar PR · Location Manager — Svetofor Film · Investment Analyst — Aspekt CP · Line Producer — 2332 films · System Administrator — Kart Oil, Stock-2 Ltd.",
+      ex_earlier_body:"Crowdfunder / Project Manager — Babylon'13: two crowdfunding campaigns (Biggggidea, Indiegogo), film screenings in Vilnius and Amsterdam · Account Manager — Pillar PR · Location Manager — Svetofor Film · Investment Analyst — Aspekt CP · System Administrator — Kart Oil, Stock-2 Ltd.",
       sk_eyebrow:"Skills", sk_title:"Skills & tools",
       sk1_t:"Management", sk1_b:"Project management · coordinating contractors and teams · brand management & PR",
       sk2_t:"Digital", sk2_b:"Digital strategy · content planning · SMM · AI-assisted web development · chatbot development",
@@ -928,6 +1010,12 @@
       c_sensum_role:"Co-founder · 2023 — present", c_sensum_report:"3-year report", c_indposhiv_role:"PM / Brand Manager · 2018 — 2020",
       c_truman_role:"Founder / CEO · 2013 — 2017", c_babylon_role:"Crowdfunder / PM · 2014",
       co_visit:"Visit ↗",
+      md_eyebrow:"Media", md_title:"Media & press", md_lead:"Broadcasts, interviews and features.",
+      md_feat_cap:"Start-UP Show with Nescafe — about Truman · 2014",
+      md_p1:"‘A man speaks’: an interview about things for real men",
+      md_p2:"‘Babylon must be destroyed’: a Babylon'13 crowdfunding case study",
+      md_p3:"Start-UP Show with Nescafe — Truman live on air",
+      md_read:"Read ↗", md_watch:"Watch ↗",
       ct_eyebrow:"Contact", ct_title:"Let's talk",
       ct_lead:"Open to Head of Digital roles, AI-production consulting and motion projects.",
       ct_phone_label:"Phone", ct_loc_label:"Location", ct_loc:"Kyiv, Ukraine", ct_social:"Social",
