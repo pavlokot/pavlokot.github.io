@@ -1239,7 +1239,7 @@
   var form = document.getElementById("botForm");
   var input = document.getElementById("botIn");
   var closeBtn = document.getElementById("botX");
-  if (!fab || !panel) return;
+  if (!fab || !panel || !log || !chips || !form || !input) return;
 
   var L = (document.documentElement.lang === "en") ? "en" : "ua";
   var greeted = false;
@@ -1345,7 +1345,8 @@
   function openBot() {
     panel.hidden = false;
     fab.setAttribute("aria-expanded", "true");
-    if (!greeted) { add("bot", T[L].greet); renderChips(); greeted = true; }
+    if (!greeted) { add("bot", T[L].greet); greeted = true; }
+    renderChips();
     setTimeout(function () { input.focus(); }, 50);
   }
   function closeBot() {
@@ -1360,8 +1361,10 @@
 
   window.__botLang = function (l) {
     L = (l === "en") ? "en" : "ua";
-    if (greeted) renderChips();
+    renderChips();
   };
+
+  renderChips();
 })();
 </script>
 
