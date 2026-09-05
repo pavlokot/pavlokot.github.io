@@ -298,6 +298,20 @@
   .person b { display:block; font-size:.92rem; font-weight:800; }
   .person span { display:block; font-size:.8rem; color:var(--mute); }
 
+  .tvid {
+    position:relative; width:clamp(148px,58%,200px); aspect-ratio:1;
+    margin:1.3rem auto .3rem; border-radius:50%; overflow:hidden; cursor:pointer;
+    background:#000; border:2px solid var(--border-2); box-shadow:var(--shadow);
+  }
+  .tvid video { width:100%; height:100%; object-fit:cover; display:block; }
+  .tvid__pin {
+    position:absolute; inset:0; display:grid; place-items:center;
+    background:rgba(0,0,0,.26); transition:opacity .2s ease;
+  }
+  .tvid.playing .tvid__pin { opacity:0; pointer-events:none; }
+  .tvid__pin svg { width:42px; height:42px; color:#fff; filter:drop-shadow(0 2px 8px rgba(0,0,0,.55)); }
+  #testimonials .grid { align-items:start; }
+
   .hint {
     margin-top:1.4rem; font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--mute);
     display:flex; align-items:center; gap:.5rem;
@@ -673,11 +687,11 @@
     <div class="grid grid--3">
       <!-- ЗАМІНА: data-video = ID відео-відгуку; data-photo = URL фото спікера -->
       <article class="card reveal">
-        <div class="frame" data-video="">
-          <button class="play" type="button" aria-label="Відтворити"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="tvid">
+          <video src="assets/tst-1.mp4" poster="assets/poster-tst-1.jpg" preload="none" playsinline></video>
+          <span class="tvid__pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
         </div>
         <div class="card__body">
-          <p class="quote__text" data-i18n="t1_quote">«Місце для відео-відгуку. Додай ролик і цитату від керівника.»</p>
           <div class="person">
             <div class="avatar" data-photo="">A</div>
             <div><b data-i18n="t1_name">Ім'я Прізвище</b><span data-i18n="t1_role">CEO, Назва компанії</span></div>
@@ -1178,6 +1192,21 @@
         if (btn) btn.addEventListener("click", function () { mountVideo(fr); });
       }
     })(frames[fi]);
+  }
+
+  /* circular video-note testimonials: tap to play/pause with sound */
+  var notes = document.querySelectorAll(".tvid");
+  for (var ni = 0; ni < notes.length; ni++) {
+    (function (box) {
+      var v = box.querySelector("video");
+      if (!v) return;
+      box.addEventListener("click", function () {
+        if (v.paused) { v.play(); } else { v.pause(); }
+      });
+      v.addEventListener("play", function () { box.classList.add("playing"); });
+      v.addEventListener("pause", function () { box.classList.remove("playing"); });
+      v.addEventListener("ended", function () { box.classList.remove("playing"); });
+    })(notes[ni]);
   }
 
   /* speaker photos */
