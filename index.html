@@ -312,12 +312,6 @@
   .tvid__pin svg { width:42px; height:42px; color:#fff; filter:drop-shadow(0 2px 8px rgba(0,0,0,.55)); }
   #testimonials .grid { align-items:start; }
 
-  .hint {
-    margin-top:1.4rem; font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--mute);
-    display:flex; align-items:center; gap:.5rem;
-  }
-  .hint::before { content:"▸"; color:var(--accent); }
-
   /* ============ EXPERIENCE ============ */
   .tl { display:flex; flex-direction:column; gap:1.1rem; }
   .tl__item {
@@ -685,7 +679,6 @@
     </div>
 
     <div class="grid grid--3">
-      <!-- ЗАМІНА: data-video = ID відео-відгуку; data-photo = URL фото спікера -->
       <article class="card reveal">
         <div class="tvid">
           <video src="assets/tst-1.mp4" poster="assets/poster-tst-1.jpg" preload="none" playsinline></video>
@@ -725,7 +718,6 @@
         </div>
       </article>
     </div>
-    <p class="hint" data-i18n="ts_hint">Заміни фото (data-photo) та відео (data-video), онови ім'я й посаду.</p>
   </section>
 
   <!-- ===== SHOWREEL ===== -->
@@ -972,7 +964,6 @@
       t2_name:"Ім'я Прізвище", t2_role:"Marketing Director, Назва компанії",
       t3_quote:"«Місце для відео-відгуку. Додай ролик і цитату від керівника.»",
       t3_name:"Ім'я Прізвище", t3_role:"Founder, Назва компанії",
-      ts_hint:"Заміни фото (data-photo) та відео (data-video), онови ім'я й посаду.",
       ex_eyebrow:"Шлях", ex_title:"Досвід",
       e1_period:"2024 — дотепер", e1_role:"Head of Digital", e1_org:"Українська асоціація девелоперів",
       e1_b1:"Розробив і веду digital-стратегію: систему контент-планування та календар для Facebook, Instagram, LinkedIn.",
@@ -1059,7 +1050,6 @@
       t2_name:"First Last", t2_role:"Marketing Director, Company name",
       t3_quote:"“Space for a video testimonial. Add a clip and a quote from the leader.”",
       t3_name:"First Last", t3_role:"Founder, Company name",
-      ts_hint:"Replace photo (data-photo) and video (data-video), update name and title.",
       ex_eyebrow:"Experience", ex_title:"Experience",
       e1_period:"2024 — present", e1_role:"Head of Digital", e1_org:"Ukrainian Association of Developers",
       e1_b1:"Built and run the digital strategy: a content-planning system and calendar for Facebook, Instagram, LinkedIn.",
