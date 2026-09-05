@@ -325,6 +325,10 @@
   .tl__item li::marker { color:var(--accent); }
   .tl--mini { grid-template-columns:170px 1fr; }
   .tl--mini p { font-size:.9rem; color:var(--dim); }
+  .mini-list { margin:0; padding-left:1.05rem; display:flex; flex-direction:column; gap:.5rem; }
+  .mini-list li { font-size:.9rem; color:var(--dim); max-width:70ch; }
+  .mini-list li::marker { color:var(--accent); }
+  .mini-list__r { color:var(--text); font-weight:600; }
   @media (max-width:640px){
     .tl__item, .tl--mini { grid-template-columns:1fr; gap:.7rem; }
   }
@@ -624,7 +628,13 @@
 
       <article class="tl__item tl--mini reveal">
         <div class="tl__when" data-i18n="ex_earlier_title">Раніше · 2001–2014</div>
-        <p data-i18n="ex_earlier_body">Краудфандер / Project Manager — «Вавилон'13»: 2 краудфандингові кампанії (Biggggidea, Indiegogo), кінопокази у Вільнюсі та Амстердамі · Менеджер по роботі з клієнтами — Pillar PR · Локейшн-менеджер — Svetofor Film · Інвестиційний аналітик — «Аспект ЦП» · Системний адміністратор — «Карт Ойл», «Сток-2 ЛТД».</p>
+        <ul class="mini-list">
+          <li><span class="mini-list__r" data-i18n="ex_e1r">Краудфандер / Project Manager</span> — <span data-i18n="ex_e1d">«Вавилон'13»: 2 краудфандингові кампанії (Biggggidea, Indiegogo), кінопокази у Вільнюсі та Амстердамі</span></li>
+          <li><span class="mini-list__r" data-i18n="ex_e2r">Менеджер по роботі з клієнтами</span> — <span data-i18n="ex_e2d">Pillar PR</span></li>
+          <li><span class="mini-list__r" data-i18n="ex_e3r">Локейшн-менеджер</span> — <span data-i18n="ex_e3d">Svetofor Film</span></li>
+          <li><span class="mini-list__r" data-i18n="ex_e4r">Інвестиційний аналітик</span> — <span data-i18n="ex_e4d">«Аспект ЦП»</span></li>
+          <li><span class="mini-list__r" data-i18n="ex_e5r">Системний адміністратор</span> — <span data-i18n="ex_e5d">«Карт Ойл», «Сток-2 ЛТД»</span></li>
+        </ul>
       </article>
     </div>
   </section>
@@ -1019,7 +1029,11 @@
       e6_period:"2012", e6_role:"Лінійний продюсер", e6_org:"2332 films",
       e6_b1:"Лінійний продюсер проєкту «Один день Євро» (канал «Україна»); пошук локацій та організація зйомок.",
       ex_earlier_title:"Раніше · 2001–2014",
-      ex_earlier_body:"Краудфандер / Project Manager — «Вавилон'13»: 2 краудфандингові кампанії (Biggggidea, Indiegogo), кінопокази у Вільнюсі та Амстердамі · Менеджер по роботі з клієнтами — Pillar PR · Локейшн-менеджер — Svetofor Film · Інвестиційний аналітик — «Аспект ЦП» · Системний адміністратор — «Карт Ойл», «Сток-2 ЛТД».",
+      ex_e1r:"Краудфандер / Project Manager", ex_e1d:"«Вавилон'13»: 2 краудфандингові кампанії (Biggggidea, Indiegogo), кінопокази у Вільнюсі та Амстердамі",
+      ex_e2r:"Менеджер по роботі з клієнтами", ex_e2d:"Pillar PR",
+      ex_e3r:"Локейшн-менеджер", ex_e3d:"Svetofor Film",
+      ex_e4r:"Інвестиційний аналітик", ex_e4d:"«Аспект ЦП»",
+      ex_e5r:"Системний адміністратор", ex_e5d:"«Карт Ойл», «Сток-2 ЛТД»",
       sk_eyebrow:"Стек", sk_title:"Навички та інструменти",
       sk1_t:"Менеджмент", sk1_b:"Проєктний менеджмент · координація підрядників і команд · бренд-менеджмент і PR",
       sk2_t:"Digital", sk2_b:"Digital-стратегія · контент-планування · SMM · веб-розробка сайтів за допомогою AI · розробка чат-ботів",
@@ -1102,7 +1116,11 @@
       e6_period:"2012", e6_role:"Line Producer", e6_org:"2332 films",
       e6_b1:"Line producer on ‘One Day of Euro’ (Ukraïna TV); location scouting and shoot coordination.",
       ex_earlier_title:"Earlier · 2001–2014",
-      ex_earlier_body:"Crowdfunder / Project Manager — Babylon'13: two crowdfunding campaigns (Biggggidea, Indiegogo), film screenings in Vilnius and Amsterdam · Account Manager — Pillar PR · Location Manager — Svetofor Film · Investment Analyst — Aspekt CP · System Administrator — Kart Oil, Stock-2 Ltd.",
+      ex_e1r:"Crowdfunder / Project Manager", ex_e1d:"Babylon'13 — two crowdfunding campaigns (Biggggidea, Indiegogo), film screenings in Vilnius and Amsterdam",
+      ex_e2r:"Account Manager", ex_e2d:"Pillar PR",
+      ex_e3r:"Location Manager", ex_e3d:"Svetofor Film",
+      ex_e4r:"Investment Analyst", ex_e4d:"Aspekt CP",
+      ex_e5r:"System Administrator", ex_e5d:"Kart Oil, Stock-2 Ltd.",
       sk_eyebrow:"Skills", sk_title:"Skills & tools",
       sk1_t:"Management", sk1_b:"Project management · coordinating contractors and teams · brand management & PR",
       sk2_t:"Digital", sk2_b:"Digital strategy · content planning · SMM · AI-assisted web development · chatbot development",
